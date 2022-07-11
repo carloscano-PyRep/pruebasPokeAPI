@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+    </header>
+    <section class="seccion">
+        <aside class="side1">
+            <div class="t1">
+                <label for="domTextElement"></label>  
+            </div>
+            <div class="fl">
+                <div class="img-responsive">
+                     <div class="text1">Nombre del pokemon</div>
+                        <img id="img" class="pokemon" alt="">
+                        <img class="fondo" alt="" src="Group 3.svg">
+                        <div id="valueInput" class="text"></div>
+                    </div>
+                <input type="text" id="domTextElement" class="in" placeholder="Escribe el nombre..."/>
+                <div class="busqueda">
+                    <button type="button"  onclick="newInput()" class="btn2">Nueva búsqueda</button>
+                    <button type="button"  onclick="getValueInput()" class="btn1">Búsqueda</button>
+                </div>
+            </div>
+        </aside>
+        <div class="div-sides2">
+        </div>
+        <div class="div-sides1">
+        </div>
+        <div class="div-sides">
+        </div>
+        <div class="div-sides3">
+        </div>
+        <aside class="side2">
+            
+            <div class="contenedor">
+                <div class="ancho">
+                    Características del pokemon
+                        <p id="p1"></p>
+                        <p id="p2"></p>
+                        <p id="p3"></p>
+                        <p id="p4"></p>
+                        <p id="p5"></p>
+                        <p id="p6"></p>
+                </div>
+                <div class="ancho1">
+                    Habilidades
+                        <p class="listota"></p>
+                </div>
+                <div class="ancho2">
+                    Tipo
+                        <p class="listota1"></p>
+                </div>
+                <div class="ancho0">
+                    <div class="ancho3">
+                        Estadísticas
+                            <p class="listota3"></p>
+                        
+                    </div>
+                    <div class="ancho4">
+                        Valor
+                            <p class="listota2"></p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <aside class="section_inf">
+        <div>
+            
+        </div>
+    </aside>
+    <footer>
+    </footer>
+</body>
+</html>
+<script>
+    const aplicacion = document.querySelector('.section_img')
+    const lista = document.querySelector('.listota')
+    const lista1 = document.querySelector('.listota1')
+    const lista2 = document.querySelector('.listota2')
+    const lista3 = document.querySelector('.listota3')
+    const getValueInput = () => {
+        let inputValue = document.getElementById('domTextElement').value;
+        //const ins = "Información del pokemon";
+        document.getElementById('valueInput').innerHTML = inputValue;
+        //document.getElementById('informacion').innerHTML = ins;
+        const url1 = `https://pokeapi.co/api/v2/pokemon/${inputValue}`;
+        console.log(url1);
+        fetch(url1)
+        .then(response => response.json())
+        .then(data => {
+            img.setAttribute("src",data.sprites.front_default)
+            document.getElementById('p5').innerHTML = "Experiencia base:"+data.base_experience;
+            document.getElementById('p2').innerHTML = "Altura:"+data.height;
+            document.getElementById('p3').innerHTML = "Peso:"+data.weight;
+            document.getElementById('p4').innerHTML = "Id:"+data.id;
+            document.getElementById('p1').innerHTML = "Nombre:"+data.name;
+            document.getElementById('p6').innerHTML = "Order:"+data.order;
+            console.log(Object.keys(data));
+            /* console.log(data.moves[0].move["name"])
+            console.log(data.moves[1].move["name"]) */
+            for(let i=0 ; i < Object.keys(data).length ; i++){
+                /* e = document.createElement('li');
+                e.innerHTML =  data.moves[i].move["name"]
+                lista.appendChild(e) */
+                console.log(Object.keys(data))
+            }
+            for(let i=0 ; i<10 ; i++){
+                e = document.createElement('p');
+                e.innerHTML =  data.moves[i].move["name"]
+                lista.appendChild(e)
+                console.log(data.moves[i].move["name"])
+            }
+            for(let i=0 ; i<data.types.length ; i++){
+                e = document.createElement('p');
+                e.innerHTML =  data.types[i].type["name"]
+                lista1.appendChild(e)
+                console.log(data.types[i].type["name"])
+            }
+            for(let i=0 ; i<data.stats.length ; i++){
+                e = document.createElement('p');
+                e.innerHTML =  data.stats[i].base_stat
+                lista2.appendChild(e)
+                
+            }
+            for(let i=0 ; i<data.stats.length ; i++){
+                e = document.createElement('p');
+                e.innerHTML =  data.stats[i].stat["name"]
+                lista3.appendChild(e)
+                
+            }
+        })
+    }
+    const newInput = () => {
+        lista.innerHTML="";
+        lista1.innerHTML="";
+        lista2.innerHTML="";
+        lista3.innerHTML="";
+    }
+</script>
+            <!-- /* for(let i=0 ; i < data.moves.length ; i++){
+                e = document.createElement('p');
+                e.innerHTML =  data.moves[i].move["name"]
+                lista.appendChild(e)
+                console.log(data.moves[i].move["name"])
+            } */
+
+            /* const p = document.createElement('p')
+            p.innerHTML = data.moves[0].move["name"]
+            aplicacion.appendChild(p) */
+            /*  console.log(pokemones.moves[0].move["name"]) */
+            //var str = JSON.stringify(data.moves,null, 4);
+            //console.log(str)
+            //console.log(Object.keys(data.moves.name))
+            //console.log(data.held_items.item)
+            //console.log(JSON.stringify(data.name))
+            //console.log(Object.keys(data.forms))
+            //console.log(data.forms[0])
+            //console.log(data.forms)
+        
+        /* .then(data => {
+            console.log(data);
+        }); */
+        
+    }
+    /* const url = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10'
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        const a = document.createElement('p')
+        a.innerHTML = data.results[0]
+        console.log(data.results[0])
+        aplicacion.appendChild(a)
+        data.results.forEach(pokemones => {
+            console.log(pokemones)
+            console.log(pokemones.moves[0].move["name"])
+            const p = document.createElement('p')
+            p.innerHTML = pokemones.name
+            aplicacion.appendChild(p)
+        })
+    }) */ -->

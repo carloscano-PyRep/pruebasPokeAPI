@@ -1,0 +1,221 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    display:flex;
+    width:100%;
+    height: 10%;
+    background-color: #da1356;
+}
+.titulo{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    background-color: #12b3e4;
+    margin: 0;
+    padding: 0;
+    width:5%;
+    height:60px;
+    color: #fff;
+    border-radius:150px;
+}
+.titulo1{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    background-color: #320816;
+    margin: 0;
+    padding: 0;
+    width:41.5%;
+    color: #fff;
+}
+.titulo2{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    background-color: #df2a2a;
+    margin: 0;
+    padding: 0;
+    width:70%;
+    color: #fff;
+}
+.seccion{
+    display:flex;
+    justify-content: space-between;
+}
+
+.div-sides{
+    width: 5%;
+    height: 100vh;
+    background-color:#591548;
+
+}
+.div-sides1{
+    width: 3%;
+    height: 100vh;
+    background-color:#C82158;
+}
+.div-sides2{
+    width: 1%;
+    height: 100vh;
+    background-color:#FC9175;
+}
+.side1{
+    background-color:#66132e;
+}
+.side2{
+    display:flex;
+    flex-grow: 2;
+    background-color:#FF1A55;
+}
+.div-sides3{
+    display:flex;
+    width:2%;
+    background-color:#000d3f;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+.contenedor{
+    display:flex;
+    justify-content:space-around;
+
+}
+.ancho0{
+    display:flex;
+    width:30%;
+}
+
+.ancho{
+    width:60%;
+    background-color:#66132e;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 20pt;
+    color: #ffffffcc;
+
+}
+p{
+    margin:0 auto;
+}
+.ancho1{
+    width:40%;
+    background-color:#0a4eb4;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 20pt;
+    color: #ffffffcc;
+}
+.ancho2{
+width:40%;
+    background-color:#1e7164;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 20pt;
+    color: #ffffffcc;
+}
+.ancho3{
+
+    background-color:#301366;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 20pt;
+    color: #ffffffcc;
+}
+.ancho4{
+    width:40%;
+    background-color:#aeb712;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 20pt;
+    color: #ffffffcc;
+}
+
+.pokemon{
+    width: 60%;
+    position: absolute;
+    margin-left:10%;
+
+}
+.text{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 28px;
+    background-color:#FFC700;
+    border-radius: 8px;
+    width: 50%;
+    margin-left: 20%;
+    text-align: center;
+    box-shadow: 5px 10px 5px black;
+
+}
+.text1{
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    font-size: 20pt;
+    background-color:#FFC700;
+    border-radius: 8px;
+    width: 60%;
+    margin-left: 15%;
+    box-shadow: 5px 10px 5px black;
+    text-align: center;
+}
+.img-responsive{
+    position: relative;
+    width: 80%;
+}
+.fl{
+    margin-top: 30px;
+    flex-direction: column;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondo{
+    width: 80%;
+    margin-top: 0%;
+    margin-left:3%;
+    box-shadow: 5px 1px 5px black;
+}
+
+.container-1{
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+  }
+
+.in{
+    margin-top:20px;
+    background: #313131;
+    border: none;
+    font-size: 20pt;
+    color: #ffffffcc;
+    text-align: center;
+    width:50%;
+    border-radius: 10px;
+    
+}
+.t1{
+    width: 100%;
+    height: 60px;
+    background-color:#FF1A55;
+    display:flex;
+}
+
+.btn1{
+    background-color:#d00101;
+    border:none;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    color: #ffffff;
+    border-radius: 300px;
+    box-shadow: 5px 10px 5px black;
+    width:12%;
+    height:49%;
+}
+.btn2{
+    background-color:#038f3f;
+    border:none;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica;
+    width:30%;
+    height:45%;;
+    color: #ffffff;
+    border-radius: 60px;
+    box-shadow: 5px 10px 5px black;
+}
+.busqueda{
+    width:100%;
+    height:18vh;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color:#040a2f;
+}
